@@ -31,77 +31,58 @@ public class Fenster_kun extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Textpfad = new javax.swing.JTextArea();
+        jBAbsenden = new javax.swing.JButton();
+        Textpfad = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBAbsenden.setText("Absenden");
+        jBAbsenden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jBAbsendenActionPerformed(evt);
             }
         });
 
-        Textpfad.setColumns(20);
-        Textpfad.setRows(5);
-        Textpfad.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-                TextpfadInputMethodTextChanged(evt);
+        Textpfad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextpfadActionPerformed(evt);
             }
         });
-        Textpfad.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                TextpfadKeyPressed(evt);
-            }
-        });
-        jScrollPane1.setViewportView(Textpfad);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(312, 312, 312)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(348, Short.MAX_VALUE))
+                    .addComponent(Textpfad, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBAbsenden))
+                .addContainerGap(701, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jButton1)
+                .addContainerGap()
+                .addComponent(Textpfad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addComponent(jBAbsenden)
+                .addContainerGap(211, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jBAbsendenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAbsendenActionPerformed
         System.out.println("Hallo Welt");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jBAbsendenActionPerformed
 
-    private void TextpfadInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_TextpfadInputMethodTextChanged
-    System.out.println("hallu");
-        String[]dani = io_manager.file_listing(Textpfad.getText());  
+    private void TextpfadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextpfadActionPerformed
+    String[]dani = io_manager.file_listing(Textpfad.getText());
     for(String falk:dani){
         System.out.println(falk);
     }
-    }//GEN-LAST:event_TextpfadInputMethodTextChanged
-
-    private void TextpfadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextpfadKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextpfadKeyPressed
+    }//GEN-LAST:event_TextpfadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,9 +121,8 @@ public class Fenster_kun extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea Textpfad;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField Textpfad;
+    private javax.swing.JButton jBAbsenden;
     // End of variables declaration//GEN-END:variables
 
 }
