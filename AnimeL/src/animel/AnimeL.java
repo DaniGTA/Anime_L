@@ -11,6 +11,7 @@ package animel;
  */
 public class AnimeL {
 String text;
+String test;
     /**
      * @param args the command line arguments
      */
