@@ -5,6 +5,10 @@
  */
 package animel;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -13,7 +17,7 @@ import javax.swing.event.DocumentListener;
  * @author FlazZixX
  */
 public class Fenster_kun extends javax.swing.JFrame {
-
+    static DefaultListModel dir_list;
     /**
      * Creates new form Fenster_kun
      */
@@ -33,6 +37,9 @@ public class Fenster_kun extends javax.swing.JFrame {
 
         jBAbsenden = new javax.swing.JButton();
         Textpfad = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        dir_list = new DefaultListModel();
+        OrdnerListe = new javax.swing.JList(dir_list);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,6 +56,8 @@ public class Fenster_kun extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane1.setViewportView(OrdnerListe);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -58,16 +67,21 @@ public class Fenster_kun extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Textpfad, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBAbsenden))
-                .addContainerGap(701, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(455, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Textpfad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jBAbsenden)
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Textpfad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBAbsenden)))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,9 +92,12 @@ public class Fenster_kun extends javax.swing.JFrame {
     }//GEN-LAST:event_jBAbsendenActionPerformed
 
     private void TextpfadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextpfadActionPerformed
-    String[]dani = io_manager.file_listing(Textpfad.getText());
-    for(String falk:dani){
-        System.out.println(falk);
+    String[]dani = io_manager.dir_listing(Textpfad.getText());
+  
+    for(String falk_2:dani){
+    dir_list.addElement(falk_2);
+    System.out.println(falk_2);
+   
     }
     }//GEN-LAST:event_TextpfadActionPerformed
 
@@ -121,8 +138,10 @@ public class Fenster_kun extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JList<String> OrdnerListe;
     private javax.swing.JTextField Textpfad;
     private javax.swing.JButton jBAbsenden;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
 }
