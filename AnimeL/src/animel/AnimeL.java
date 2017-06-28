@@ -28,6 +28,7 @@ public class AnimeL {
 //                  frame.setVisible(true);
     Fenster_kun f1 = new Fenster_kun();
     f1.setVisible(true);
+    f1.setBounds(350, 270, 576, 480);
     }
     
 }
