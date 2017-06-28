@@ -13,11 +13,11 @@ import java.io.File;
  */
 public class io_manager {
     
-    public void get_files(){
+    public static void get_files(){
 
 
 }
-    public String[] file_listing(String path){
+    public static String[] file_listing(String path){
         File file = new File(path);
         String[] file_2 =file.list();
        
