@@ -11,6 +11,7 @@ package animel;
  */
 public class AnimeL {
     String Hallo = "moin";
+    String[] NICE = new String[69];
     /**
      * @param args the command line arguments
      */
