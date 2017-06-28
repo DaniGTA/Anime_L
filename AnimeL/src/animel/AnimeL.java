@@ -7,6 +7,8 @@ package animel;
 
 import java.awt.Dimension;
 import javax.swing.JFrame;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 /**
  *
@@ -28,7 +30,8 @@ public class AnimeL {
 //                  frame.setVisible(true);
     Fenster_kun f1 = new Fenster_kun();
     f1.setVisible(true);
-    f1.setBounds(350, 270, 576, 480);
+    f1.setBounds(100, 100, 1300, 650);
+
     }
     
 }
