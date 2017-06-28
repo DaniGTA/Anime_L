@@ -10,10 +10,7 @@ package animel;
  * @author Daniel
  */
 public class AnimeL {
-String text;
-String test;
-String iii;
-String ii_i;
+
     /**
      * @param args the command line arguments
      */
