@@ -10,7 +10,7 @@ package animel;
  * @author Daniel
  */
 public class AnimeL {
-
+    String Hallo = "moin";
     /**
      * @param args the command line arguments
      */
