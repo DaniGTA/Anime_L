@@ -19,13 +19,15 @@ public class AnimeL {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        frame = new JFrame("Test");
-		  frame.setVisible(false);
-                  frame.setMinimumSize(new Dimension(1300,450));
-		  frame.setBounds(100, 100, 1300, 650);
-		  frame.getContentPane().setLayout(null);
-		  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                  frame.setVisible(true);
+//        frame = new JFrame("Test");
+//		  frame.setVisible(false);
+//                  frame.setMinimumSize(new Dimension(1300,450));
+//		  frame.setBounds(100, 100, 1300, 650);
+//		  frame.getContentPane().setLayout(null);
+//		  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//                  frame.setVisible(true);
+    Fenster_kun f1 = new Fenster_kun();
+    f1.setVisible(true);
     }
     
 }
