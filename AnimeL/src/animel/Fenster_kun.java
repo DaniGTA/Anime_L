@@ -23,7 +23,7 @@ public class Fenster_kun extends javax.swing.JFrame {
      */
     public Fenster_kun() {
         initComponents();
-        
+        jBAbsenden.setText(lang_manager.lang[40]);
     }
 
     /**
