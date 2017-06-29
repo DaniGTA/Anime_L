@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontFormatException;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
@@ -39,7 +41,18 @@ public class Fenster_kun extends javax.swing.JFrame {
         jLabel1.setText(lang_manager.lang[41]);
         jLabel2.setText(lang_manager.lang[43]);
         jButton1.setText(lang_manager.lang[42]);
-                
+        InputStream is = this.getClass().getResourceAsStream("/font/Exo2_Regular.ttf");
+        try {
+            
+            Font font = Font.createFont(Font.TRUETYPE_FONT, is);
+            font = font.deriveFont(40F);
+            jLabel1.setFont(font);
+            
+        } catch (FontFormatException e) {
+            System.out.println(e);
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 
     /**
@@ -191,7 +204,7 @@ public class Fenster_kun extends javax.swing.JFrame {
     private javax.swing.JTextField Textpfad;
     private javax.swing.JButton jBAbsenden;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    public static javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
