@@ -20,11 +20,11 @@ public class lang_manager {
     }
     }
     public static void set_lang(String lang){
-    System.out.println("Sprache gesetzt auf: "+lang);
+    System.out.println("Sprache auf '"+lang+ "' gesetzt!");
     if(lang.equals("ger")){
     lang_manager.lang[0]="ger";
     //40-49 FensterKun
-    lang_manager.lang[40] = "Einloggen";
+    lang_manager.lang[40] = "Einstellungen";
     lang_manager.lang[41] = "Wähle deinen Anime Ordner";
     lang_manager.lang[42] = "Ordner wählen";
     lang_manager.lang[43] = "oder füg den Pfad ein";
@@ -33,7 +33,7 @@ public class lang_manager {
     lang_manager.lang[51] = "Benutzername";
     lang_manager.lang[52] = "Passwort";
     lang_manager.lang[53] = "Einloggen";
-    lang_manager.lang[54] = "";
+    lang_manager.lang[54] = "Deutsch";
     lang_manager.lang[55] = "";
     lang_manager.lang[56] = "";
     lang_manager.lang[57] = "";
@@ -46,13 +46,13 @@ public class lang_manager {
     //English
     lang_manager.lang[0]="eng";
     //40-49 FensterKun
-    lang_manager.lang[40] = "MyAnimeList Login";
+    lang_manager.lang[40] = "Settings";
     //50-60 MyAnimeList Login
     lang_manager.lang[50] = "Login Failed"; //Dafür gibt es 100% eine besser Übersetzung
     lang_manager.lang[51] = "Username";
     lang_manager.lang[52] = "Password";
     lang_manager.lang[53] = "Login";
-    lang_manager.lang[54] = "";
+    lang_manager.lang[54] = "English";
     lang_manager.lang[55] = "";
     lang_manager.lang[56] = "";
     lang_manager.lang[57] = "";
