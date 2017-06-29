@@ -92,13 +92,13 @@ public class Fenster_kun extends javax.swing.JFrame {
     }//GEN-LAST:event_jBAbsendenActionPerformed
 
     private void TextpfadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextpfadActionPerformed
-    String[]dani = io_manager.dir_listing(Textpfad.getText());
-  
+    try{
+        String[]dani = io_manager.dir_listing(Textpfad.getText());
     for(String falk_2:dani){
     dir_list.addElement(falk_2);
     System.out.println(falk_2);
-   
     }
+    }catch(java.lang.NullPointerException e){}
     }//GEN-LAST:event_TextpfadActionPerformed
 
     /**
