@@ -161,6 +161,7 @@ public class Fenster_kun extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBAbsendenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAbsendenActionPerformed
+
     Login l1 = new Login();
     l1.setVisible(true);
     l1.setBounds(100, 100, 1300, 650);

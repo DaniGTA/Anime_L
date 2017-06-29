@@ -139,5 +139,16 @@ public class my_anime_list_handler {
                       return anime_info;
                       }
     }
+    public static boolean check_logged_in(){
+        try{
+        if(!u.isEmpty()){
+            return true;
+        }
+        else return false; 
+        
+        }catch(NullPointerException e){
+            return false;
+        }
+    }
     }
 
