@@ -28,6 +28,8 @@ public class AnimeL {
 //		  frame.getContentPane().setLayout(null);
 //		  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //                  frame.setVisible(true);
+    lang_manager.lang_cache="ger";
+    lang_manager.int_lang();
     Fenster_kun f1 = new Fenster_kun();
     f1.setVisible(true);
     f1.setBounds(100, 100, 1300, 650);
