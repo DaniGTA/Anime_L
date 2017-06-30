@@ -5,24 +5,26 @@
  */
 package animel;
 
+import java.util.Locale;
 /**
  *
  * @author Daniel
  */
 public class lang_manager {
     static String[] lang=new String[100];
-    static String lang_cache;
+    static String lang_cache="";
     public static void int_lang(){
     if(lang_cache.isEmpty()){
-    set_lang("ger");
+    Locale.getDefault();
+    set_lang(Locale.getDefault().getISO3Language());
     }else{
     set_lang(lang_cache);
     }
     }
     public static void set_lang(String lang){
     System.out.println("Sprache auf '"+lang+ "' gesetzt!");
-    if(lang.equals("ger")){
-    lang_manager.lang[0]="ger";
+    if(lang.equals("deu")){
+    lang_manager.lang[0]="deu";
     //40-49 FensterKun
     lang_manager.lang[40] = "Einstellungen";
     lang_manager.lang[41] = "Wähle deinen Anime Ordner";

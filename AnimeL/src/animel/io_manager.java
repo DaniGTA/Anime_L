@@ -27,11 +27,9 @@ public class io_manager {
 }
     public static String[] file_listing(String path){
         File file = new File(path);
-        String[] file_2 =file.list();
-       
-        
-        return file_2;
+        return file.list();
     }
+    
     public static String[] dir_listing(String path){
         List<String> dir_list = new ArrayList<String>();
         File file = new File(path);
@@ -42,8 +40,27 @@ public class io_manager {
         }
         }
         String[] file_2 = new String[dir_list.size()];
-        file_2 = dir_list.toArray(file_2);
-        return file_2;
+        return dir_list.toArray(file_2);
     }
-}
+    public static boolean is_movie(String path){
+    String file=path.substring(path.length()-3);
+    System.out.println("DEBUG: "+file);
+    switch(file){
+    case "mkv":
+    return true;
+    case "mp4":
+    return true;
+    case "amv":
+    return true;
+    case "mov":
+    return true;
+    case "avi":
+    return true;
+    //NeedToSupportMore
+    default:
+    return false;
+    }
+    }
+    }
+
 

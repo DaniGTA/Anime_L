@@ -5,20 +5,34 @@
  */
 package animel;
 
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.util.ArrayList;
 import java.util.List;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.FontFormatException;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JRootPane;
 import static javax.swing.SwingConstants.CENTER;
+import javax.swing.SwingUtilities;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -124,19 +138,21 @@ public class Fenster_kun extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jBAbsenden, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Textpfad)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 759, Short.MAX_VALUE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Textpfad)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 759, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 364, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(364, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,11 +161,11 @@ public class Fenster_kun extends javax.swing.JFrame {
                 .addComponent(jBAbsenden)
                 .addGap(126, 126, 126)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addGap(4, 4, 4)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(Textpfad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -169,26 +185,26 @@ public class Fenster_kun extends javax.swing.JFrame {
     }//GEN-LAST:event_jBAbsendenActionPerformed
 
     private void TextpfadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextpfadActionPerformed
-    try{
-        String[]dani = io_manager.dir_listing(Textpfad.getText());
-    for(String falk_2:dani){
-    dir_list.addElement(falk_2);
-    System.out.println(falk_2);
-    }
-    jScrollPane1.setVisible(true);
-    }catch(java.lang.NullPointerException e){}
+
+    jButton1.setVisible(false);
+    jLabel1.setVisible(false);
+    jLabel2.setVisible(false);
+    Textpfad.setVisible(false);
+    Component component = (Component) evt.getSource();
+                    JFrame frame = (JFrame) SwingUtilities.getRoot(component);
+    basic_funktions.add_folder(frame,Textpfad.getText());
+  
     }//GEN-LAST:event_TextpfadActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JFileChooser new_path = new JFileChooser(); 
-                                      new_path.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY );
-                                      int state = new_path.showOpenDialog(null);
-
-                              if (state == JFileChooser.APPROVE_OPTION) {
-                                  File file = new_path.getSelectedFile();
-                                  Textpfad.setText(file.getAbsolutePath());
-                                  
-                              }
+        new_path.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY );
+        int state = new_path.showOpenDialog(null);
+        
+        if (state == JFileChooser.APPROVE_OPTION) {
+        File file = new_path.getSelectedFile();
+        Textpfad.setText(file.getAbsolutePath());
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -198,7 +214,7 @@ public class Fenster_kun extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> OrdnerListe;
-    private javax.swing.JTextField Textpfad;
+    public static javax.swing.JTextField Textpfad;
     private javax.swing.JButton jBAbsenden;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
