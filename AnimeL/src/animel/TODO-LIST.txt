@@ -1,0 +1,23 @@
+-Tipp box
+-Tipp funktion like send_tipp(String text);
+-(Tipp sollte in 10 sec verschwinden)
+
+- Mp4 preview image picker
+- Ordner texte
+- Erkennung von nicht gut benannten video titeln like ("Name - 02 [BlaBla][DubSub][SubSub][Sound][Blalba]")
+
+- Einstellungen für Optimierte title like: Name - Folge oder Name - Folge - Titel usw
+- Makiere neue Hinzugefügte Ordner
+- Speichern von Einstellungen/Laden
+- Speichern von CacheBilder
+
+- Thread Optmierter Ordner Scan -erst möglich wenn Speicher/Laden vorhanden ist
+- Anime finden.
+- Dynamische ansicht für Vorhandene Folgen und Sonstige informationen (onMouseHover)
+
+- Verschieden Ansichten für Ordner/Videos
+
+- evtl sync für geschaut Animes auf der MAL AnimeListe
+
+- evtl Support für Mangas
+
